@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Browse ten OopBuy spreadsheet categories at HipoBuyFind and learn how to check product links, compare sizing, review QC photos, and estimate shipping.">
+  <meta name="theme-color" content="#f5f1e8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OopBuy spreadsheet | Finds, Sizing & QC Guide">
+  <meta property="og:description" content="Find the right category, compare listings, and know what to check before you order.">
+  <title>OopBuy spreadsheet | Finds, Sizing &amp; QC Guide</title>
+  <!-- Research note: Bing returned no usable results for the exact query. Ten fallback pages reviewed: ssfinds.com, oop-sheets.com, oopbuywithqc.com, ooopbuy.co.uk, ooopbuy.me/guides, oopbuying.com, puroclassico.com, oopbuysheet.com, oopbuysupply.com, ooopbuy.me. -->
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f1e8;
+      --panel: #fffcf5;
+      --ink: #192e2e;
+      --muted: #415857;
+      --accent: #004c49;
+      --line: #c8d0c7;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.55 system-ui, sans-serif; }
+    a { color: var(--accent); text-underline-offset: .18em; }
+    a:hover { text-decoration-thickness: .14em; }
+    :focus-visible { outline: 3px solid #a03a14; outline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+    h1, h2, h3, p, figure, dl, dd { margin: 0; }
+    h1, h2, h3 { line-height: 1.13; text-wrap: balance; }
+    h1 { font-size: clamp(2.35rem, 6vw, 5.1rem); letter-spacing: -.065em; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.45rem); letter-spacing: -.035em; }
+    h3 { font-size: 1.2rem; }
+    .wrap { width: min(72rem, calc(100% - 2rem)); margin-inline: auto; }
+    .mast, .foot { padding-block: .85rem; border-block-end: 1px solid var(--line); }
+    .mast .wrap, .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .45rem 1rem; }
+    .brand { font-weight: 800; text-decoration: none; }
+    .label { color: var(--muted); font-size: .76rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+    .intro { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(1rem, 4vw, 3rem); align-items: center; padding-block: clamp(1.5rem, 5vw, 3.5rem); }
+    .intro h1 { margin-block: .45rem .8rem; }
+    .lede { max-width: 57ch; font-size: clamp(1rem, 2vw, 1.17rem); }
+    .hero-photo, .gallery figure { overflow: hidden; border: 1px solid var(--line); border-radius: .8rem; background: var(--panel); }
+    .hero-photo img { aspect-ratio: 2 / 1; object-fit: cover; object-position: center 60%; background: #eee; }
+    figcaption { padding: .55rem .75rem; color: var(--muted); font-size: .82rem; }
+    .categories { padding: clamp(1rem, 3vw, 1.65rem); border-radius: .9rem; color: #f8fff8; background: #163e3b; }
+    .categories p { margin-block: .35rem .9rem; color: #dcebe4; }
+    .categories ul { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .55rem; margin: 0; padding: 0; list-style: none; }
+    .categories a { display: flex; align-items: center; justify-content: space-between; gap: .45rem; min-height: 3.4rem; height: 100%; padding: .5rem .65rem; overflow-wrap: anywhere; border: 1px solid #81a39c; border-radius: .45rem; color: #f8fff8; text-decoration: none; font-size: .9rem; font-weight: 680; }
+    .categories a:hover { background: #275650; text-decoration: underline; }
+    .categories a:focus-visible { outline-color: #ffc996; }
+    .section { margin-block: clamp(2rem, 6vw, 4rem); }
+    .section > p { margin-block: .45rem .95rem; }
+    .gallery, .articles { display: grid; gap: .8rem; }
+    .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .gallery img { aspect-ratio: 1; object-fit: contain; background: #eee; }
+    .articles { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem; }
+    article { padding: 1rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--panel); }
+    article h3 { margin-block: .35rem .55rem; }
+    article p + p { margin-top: .65rem; }
+    .faq dl { margin-top: .7rem; }
+    .faq dl > div { padding: .75rem 0; border-bottom: 1px solid var(--line); }
+    .faq dt { font-weight: 750; }
+    .faq dd { max-width: 73ch; margin-top: .25rem; }
+    .foot { border-block: 1px solid var(--line) 0; color: var(--muted); font-size: .88rem; }
+    @media (max-width: 52rem) {
+      .categories ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .articles { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 35rem) {
+      .intro { grid-template-columns: 1fr; }
+      .categories ul, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-photo img { aspect-ratio: 12 / 5; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "OopBuy spreadsheet | Finds, Sizing & QC Guide",
+        "description": "Browse ten OopBuy spreadsheet categories at HipoBuyFind and learn how to check product links, compare sizing, review QC photos, and estimate shipping.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "name": "OopBuy spreadsheet FAQ",
+        "inLanguage": "en",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an OopBuy spreadsheet?",
+            "acceptedAnswer": {"@type": "Answer", "text": "It is a category-based directory for finding and comparing product listings. The category links on this independent guide open HipoBuyFind."}
+          },
+          {
+            "@type": "Question",
+            "name": "What should I check before copying a product link?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Open the live listing and check the seller, selected size and color, current availability, and return terms. Copy the original listing URL when it is available."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can QC photos verify authenticity?",
+            "acceptedAnswer": {"@type": "Answer", "text": "QC photos can show visible condition, measurements, and some construction details. For authenticity, use verifiable seller records or a qualified authentication service."}
+          },
+          {
+            "@type": "Question",
+            "name": "How do I estimate the full shipping cost?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Use your destination and the packed weight and dimensions to compare available routes. Check service fees and any destination taxes or duties before paying."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ucxxw/">
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+      <span class="label">Buyer’s field notes</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="label">Finds index · Fit · QC · Shipping</p>
+        <h1 id="page-title">OopBuy spreadsheet</h1>
+        <p class="lede">Start with a category, shortlist a few listings, and check the details that can change your decision. This independent guide pairs HipoBuyFind’s category directory with practical checks for fit, photos, and delivery costs.</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png" width="1070" height="1338" alt="Side view of an all-white Nike Air Force 1 ’07 low-top sneaker" fetchpriority="high" decoding="async">
+        <figcaption>Style reference · Nike Air Force 1 ’07</figcaption>
+      </figure>
+    </section>
+
+    <nav class="categories" aria-labelledby="category-title">
+      <h2 id="category-title">Browse OopBuy finds by category</h2>
+      <p>Each category opens its corresponding HipoBuyFind collection.</p>
+      <ul>
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Shoes <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jackets <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pants/Shorts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Headwear <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Sets <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underwear/underpants <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Jersey <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessories <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+
+    <section class="section" aria-labelledby="guide-title">
+      <h2 id="guide-title">OopBuy buying guide</h2>
+      <div class="articles">
+        <article aria-labelledby="links-title">
+          <p class="label">01 · Shortlist</p>
+          <h3 id="links-title">Check OopBuy product links</h3>
+          <p>Start with two or three comparable listings. For a Weidian product link, Taobao listing, or 1688 supplier page, confirm the original seller URL, exact color option, size availability, and seller return window.</p>
+          <p>Save the listing URL and the variant together. If you encounter a dead spreadsheet link, find a live listing in the same category and compare its material and measurements again.</p>
+        </article>
+        <article aria-labelledby="qc-title">
+          <p class="label">02 · Inspect</p>
+          <h3 id="qc-title">Read OopBuy QC photos</h3>
+          <p>For a sneaker QC check, look for both shoes, the outsole, and the size tag. Compare the insole length with a pair you wear. For a hoodie size chart, match flat chest width and sleeve length to a garment you own.</p>
+          <p>For a jersey fit check, compare chest and body length. For caps and jewelry, confirm head circumference or bracelet inner circumference. If a warehouse photo hides a clasp or seam, ask for a close-up where available.</p>
+        </article>
+        <article aria-labelledby="shipping-title">
+          <p class="label">03 · Compare</p>
+          <h3 id="shipping-title">Estimate OopBuy shipping costs</h3>
+          <p>Add the item price, domestic delivery fee, agent service fees, and the international shipping estimate. Check the packed parcel weight and dimensions, since a carrier may use volumetric weight when quoting a route.</p>
+          <p>For a consolidated parcel, compare the cost after packing. Check tracking, route restrictions, and potential import charges for your destination before selecting a service.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Style references</h2>
+      <p>Use these brand photos to compare shapes and details. Check individual listings for availability and item photos.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://assets.christiandior.cn/is/image/diorprod/547C85A2570X5807_E01?%24default_GHC%24=&amp;bfc=on&amp;crop=357%2C149%2C1283%2C1472&amp;hei=480&amp;qlt=80&amp;wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Blue-and-white Dior Oblique zip jacket with a pointed collar">
+          <figcaption>Dior · Oblique jacket</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1659595532/681264_3HAGJ_2564_001_100_0000_Light-Casquette-en-toileGG-jumbo.jpg" width="490" height="490" loading="lazy" decoding="async" alt="Tan Gucci baseball cap with a brown Jumbo GG pattern">
+          <figcaption>Gucci · Jumbo GG cap</figcaption>
+        </figure>
+        <figure>
+          <img src="https://au.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-neverfull-mm--M46975_PM1_Side%20view.png?hei=480&amp;wid=480" width="480" height="480" loading="lazy" decoding="async" alt="Brown Louis Vuitton Neverfull MM monogram tote with tan shoulder straps">
+          <figcaption>Louis Vuitton · Neverfull MM tote</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.oliverjewellery.ca/cdn/shop/files/Hermes-Palladium-Plated-Orange-Enamel-Clic-H-Bracelet-w-Box_f80dab0b.jpg?v=1744110722&amp;width=480" width="480" height="480" loading="lazy" decoding="async" alt="Orange enamel Hermès Clic H bracelet with a silver-tone clasp">
+          <figcaption>Hermès · Clic H bracelet</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">OopBuy spreadsheet FAQ</h2>
+      <dl>
+        <div>
+          <dt>What is an OopBuy spreadsheet?</dt>
+          <dd>It is a category-based directory for finding and comparing product listings. The category links on this independent guide open HipoBuyFind.</dd>
+        </div>
+        <div>
+          <dt>What should I check before copying a product link?</dt>
+          <dd>Open the live listing and check the seller, selected size and color, current availability, and return terms. Copy the original listing URL when it is available.</dd>
+        </div>
+        <div>
+          <dt>Can QC photos verify authenticity?</dt>
+          <dd>QC photos can show visible condition, measurements, and some construction details. For authenticity, use verifiable seller records or a qualified authentication service.</dd>
+        </div>
+        <div>
+          <dt>How do I estimate the full shipping cost?</dt>
+          <dd>Use your destination and the packed weight and dimensions to compare available routes. Check service fees and any destination taxes or duties before paying.</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>Independent product discovery guide</span>
+      <a href="https://www.hipobuyfind.com">Visit HipoBuyFind</a>
+    </div>
+  </footer>
+</body>
+</html>
